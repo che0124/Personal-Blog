@@ -852,14 +852,14 @@ section,
 
 .portfolio .portfolio-content .portfolio-info p {
   position: absolute;
-  bottom: 10px;
+  bottom: 100px;
   text-align: center;
   display: inline-block;
   left: 0;
   right: 0;
   font-size: 16px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255);
 }
 
 .portfolio .portfolio-content .portfolio-info .preview-link,
@@ -949,6 +949,8 @@ section,
   margin-top: 20px;
   position: relative;
 }
+
+
 
 
 /*--------------------------------------------------------------
@@ -1176,6 +1178,65 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  z-index: 1;
+}
+
+.video-container:hover .overlay {
+  opacity: 1; 
+}
+
+.project-img {
+  width: 100%; /* Ensures the image is responsive */
+  object-fit: cover;
+  height: auto; /* Keeps the aspect ratio */
+  transition: 0.3s;
+  border: 0.5px solid #707070;
+}  
+
+
+.video-container:hover .project-img {
+  transform: scale(1.1);
+}
+
+.play-icon {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px; /* Adjust size of play icon */
+  color: white; /* Icon color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for icon visibility */
+}
+
+.video-container:hover .play-icon {
+  opacity: 1; /* Show icon on hover */
+}
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
 }
 
 /*--------------------------------------------------------------
